@@ -55,6 +55,7 @@
         position: relative;
         min-height: 100svh;
         min-height: 100dvh;
+        min-height: calc(var(--vh, 1vh) * 100);
         width: 100%;
         background: #fff;
         display: flex;
@@ -685,6 +686,16 @@
         }
       }
     </style>
+    <script>
+      (function () {
+        const setVh = () => {
+          const vh = window.innerHeight * 0.01;
+          document.documentElement.style.setProperty("--vh", `${vh}px`);
+        };
+        setVh();
+        window.addEventListener("resize", setVh);
+      })();
+    </script>
   </head>
   <body>
     <div class="page">
