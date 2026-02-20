@@ -2,7 +2,7 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <title>Индустриальная Партнёрская Платформа</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -30,6 +30,7 @@
         scroll-behavior: smooth;
         height: 100%;
         background: #fff;
+        height: -webkit-fill-available;
       }
 
       body {
@@ -41,6 +42,7 @@
         min-height: 100%;
         overscroll-behavior-y: none;
         padding-bottom: env(safe-area-inset-bottom);
+        min-height: -webkit-fill-available;
       }
 
       a {
@@ -56,6 +58,7 @@
         min-height: 100svh;
         min-height: 100dvh;
         min-height: calc(var(--vh, 1vh) * 100);
+        min-height: -webkit-fill-available;
         width: 100%;
         background: #fff;
         display: flex;
@@ -694,6 +697,7 @@
         };
         setVh();
         window.addEventListener("resize", setVh);
+        window.addEventListener("orientationchange", setVh);
       })();
     </script>
   </head>
